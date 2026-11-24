@@ -3,70 +3,362 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>موقعي الأول</title>
+    <title>موقعي الشامل | بورتفوليو، خدمات، مدونة وتواصل</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f6f9;
-            color: #222;
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --dark: #111827;
+            --gray: #4b5563;
+            --light-bg: #f3f4f6;
+            --card-bg: #ffffff;
+            --border: #e5e7eb;
+        }
+
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            text-align: center;
         }
+
+        body {
+            font-family: Tahoma, Arial, sans-serif;
+            background-color: var(--light-bg);
+            color: var(--dark);
+            line-height: 1.7;
+        }
+
+        /* شريط التنقل */
         header {
-            background-color: #1f2937;
+            background-color: var(--dark);
             color: #ffffff;
-            padding: 30px 15px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
         }
-        main {
-            max-width: 700px;
-            margin: 40px auto;
-            background-color: #ffffff;
-            padding: 30px 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+
+        .nav-container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 15px 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
         }
-        button {
-            background-color: #2563eb;
+
+        .logo {
+            font-size: 20px;
+            font-weight: bold;
+            color: #60a5fa;
+            text-decoration: none;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        nav a {
             color: #ffffff;
-            border: none;
-            padding: 12px 24px;
-            font-size: 16px;
+            text-decoration: none;
+            font-size: 15px;
+            padding: 6px 12px;
             border-radius: 6px;
+            transition: background 0.2s;
+        }
+
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.12);
+        }
+
+        /* صفحة الهبوط الرئيسية */
+        .hero {
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+            color: #ffffff;
+            text-align: center;
+            padding: 70px 20px;
+        }
+
+        .hero h1 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: 0 auto 25px;
+            color: #cbd5e1;
+            font-size: 17px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: #ffffff;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 15px;
             cursor: pointer;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-dark);
+        }
+
+        /* الأقسام العامة */
+        section {
+            max-width: 1100px;
+            margin: 45px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 26px;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--gray);
+            margin-bottom: 30px;
+            font-size: 15px;
+        }
+
+        /* شبكة البطاقات */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 22px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            color: var(--primary);
+            font-size: 19px;
+        }
+
+        .card p {
+            color: var(--gray);
+            font-size: 14.5px;
+            margin-bottom: 12px;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: #dbeafe;
+            color: #1e40af;
+            font-size: 12px;
+            padding: 4px 10px;
+            border-radius: 20px;
+            margin-bottom: 10px;
+        }
+
+        /* نموذج التواصل */
+        .contact-box {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 25px;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 11px 14px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 15px;
+        }
+
+        #status-msg {
             margin-top: 15px;
+            font-weight: bold;
+            color: #15803d;
         }
-        button:hover {
-            background-color: #1d4ed8;
-        }
+
+        /* التذييل */
         footer {
-            margin-top: 40px;
-            color: #666;
+            background-color: var(--dark);
+            color: #cbd5e1;
+            text-align: center;
+            padding: 25px 15px;
+            margin-top: 60px;
             font-size: 14px;
         }
     </style>
 </head>
 <body>
 
+    <!-- الشريط العلوي -->
     <header>
-        <h1>مرحباً بك في موقعي</h1>
-        <p>هذه أول صفحة ويب أرفعها على GitHub</p>
+        <div class="nav-container">
+            <a href="#home" class="logo">موقعي الشامل</a>
+            <nav>
+                <a href="#about">من أنا</a>
+                <a href="#services">الخدمات</a>
+                <a href="#portfolio">الأعمال</a>
+                <a href="#blog">المدونة</a>
+                <a href="#contact">تواصل معي</a>
+            </nav>
+        </div>
     </header>
 
-    <main>
-        <h2>نبذة عن المشروع</h2>
-        <p>أهلاً بك! هنا سأضع أعمالي وصفحاتي القادمة خطوة بخطوة.</p>
-        <button onclick="showMessage()">اضغط هنا</button>
-        <p id="msg" style="margin-top: 15px; font-weight: bold;"></p>
-    </main>
+    <!-- صفحة الهبوط -->
+    <div id="home" class="hero">
+        <h1>أهلاً بك في منصتي المتكاملة</h1>
+        <p>مساحة واحدة تجمع بين التعريف الشخصي، الخدمات والمشاريع، المقالات والتدوينات، وطرق التواصل المباشر.</p>
+        <a href="#portfolio" class="btn">استكشف الأعمال</a>
+    </div>
 
+    <!-- من أنا (بورتفوليو) -->
+    <section id="about">
+        <h2 class="section-title">من أنا</h2>
+        <p class="section-subtitle">نبذة سريعة عني وعن اهتماماتي وتطوير مشاريعي</p>
+        <div class="card">
+            <span class="badge">ملف تعريفي</span>
+            <h3>مرحباً، أنا مطور وصانع محتوى رقمي</h3>
+            <p>أعمل على بناء صفحات ومشاريع ويب وتجربة نشرها وتطويرها خطوة بخطوة عبر GitHub، مع التركيز على البساطة والوضوح وسهولة الاستخدام على الهاتف والحاسوب.</p>
+            <button class="btn" onclick="toggleWelcome()">عرض رسالة ترحيب</button>
+            <p id="welcome-text" style="margin-top: 12px; font-weight: bold; color: var(--dark);"></p>
+        </div>
+    </section>
+
+    <!-- الخدمات -->
+    <section id="services">
+        <h2 class="section-title">الخدمات</h2>
+        <p class="section-subtitle">ما الذي أقدمه في هذا المشروع</p>
+        <div class="grid">
+            <div class="card">
+                <span class="badge">01</span>
+                <h3>تصميم صفحات الويب</h3>
+                <p>إنشاء واجهات منظمة وسريعة الاستجابة لمختلف أحجام الشاشات.</p>
+            </div>
+            <div class="card">
+                <span class="badge">02</span>
+                <h3>نشر المشاريع</h3>
+                <p>رفع وإدارة الملفات البرمجية ومشاركتها بسهولة عبر المستودعات.</p>
+            </div>
+            <div class="card">
+                <span class="badge">03</span>
+                <h3>تنظيم المحتوى</h3>
+                <p>هيكلة المقالات والمشاريع والأقسام بشكل واضح يسهل تصفحه.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- الأعمال والمشاريع -->
+    <section id="portfolio">
+        <h2 class="section-title">الأعمال والمشاريع</h2>
+        <p class="section-subtitle">نماذج من المشاريع والأقسام المضافة</p>
+        <div class="grid">
+            <div class="card">
+                <span class="badge">مشروع 1</span>
+                <h3>صفحة تعريفية شخصية</h3>
+                <p>واجهة تعرض النبذة الشخصية والمهارات والروابط الأساسية بشكل مرتب.</p>
+            </div>
+            <div class="card">
+                <span class="badge">مشروع 2</span>
+                <h3>صفحة هبوط للمشاريع</h3>
+                <p>تصميم يبرز الفكرة الرئيسية وأزرار الانتقال السريع للأقسام.</p>
+            </div>
+            <div class="card">
+                <span class="badge">مشروع 3</span>
+                <h3>قسم تدوين ومقالات</h3>
+                <p>بطاقات مخصصة لعرض الأفكار والملاحظات والتحديثات المستمرة.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- المدونة والمقالات -->
+    <section id="blog">
+        <h2 class="section-title">المدونة والمقالات</h2>
+        <p class="section-subtitle">آخر التدوينات والملاحظات</p>
+        <div class="grid">
+            <div class="card">
+                <span class="badge">مقال 1</span>
+                <h3>بدايتي مع بناء صفحات الويب</h3>
+                <p>كيف نبدأ بملف index.html بسيط ثم نطوره ليضم أقساماً متعددة وتفاعلاً حقيقياً.</p>
+            </div>
+            <div class="card">
+                <span class="badge">مقال 2</span>
+                <h3>تنظيم الأكواد على GitHub</h3>
+                <p>أهمية تسمية الملفات والمستودعات بوضوح ومتابعة التعديلات خطوة بأخرى.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- نموذج التواصل -->
+    <section id="contact">
+        <h2 class="section-title">تواصل معي</h2>
+        <p class="section-subtitle">أرسل رسالة أو ملاحظة مباشرة</p>
+        <div class="contact-box">
+            <form onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <label for="name">الاسم الكامل</label>
+                    <input type="text" id="name" placeholder="اكتب اسمك هنا" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">البريد الإلكتروني</label>
+                    <input type="email" id="email" placeholder="example@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">الرسالة</label>
+                    <textarea id="message" rows="4" placeholder="اكتب رسالتك أو استفسارك هنا..." required></textarea>
+                </div>
+                <button type="submit" class="btn">إرسال الرسالة</button>
+                <p id="status-msg"></p>
+            </form>
+        </div>
+    </section>
+
+    <!-- التذييل -->
     <footer>
-        <p>جميع الحقوق محفوظة &copy; 2026</p>
+        <p>جميع الحقوق محفوظة &copy; 2026 — تم التطوير بنجاح</p>
     </footer>
 
     <script>
-        function showMessage() {
-            document.getElementById("msg").textContent = "تم تشغيل الصفحة بنجاح!";
+        function toggleWelcome() {
+            const el = document.getElementById("welcome-text");
+            el.textContent = "أهلاً بك! الكود يعمل والأقسام جاهزة للتعديل حسب رغبتك.";
+        }
+
+        function handleSubmit(event) {
+            event.preventDefault();
+            const name = document.getElementById("name").value.trim();
+            const statusEl = document.getElementById("status-msg");
+            statusEl.textContent = "شكراً لك يا " + name + "، تم استلام رسالتك بنجاح في الصفحة!";
+            event.target.reset();
         }
     </script>
 
