@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>موقعي الأول</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
+            color: #222;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        header {
+            background-color: #1f2937;
+            color: #ffffff;
+            padding: 30px 15px;
+        }
+        main {
+            max-width: 700px;
+            margin: 40px auto;
+            background-color: #ffffff;
+            padding: 30px 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+        }
+        button {
+            background-color: #2563eb;
+            color: #ffffff;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+        button:hover {
+            background-color: #1d4ed8;
+        }
+        footer {
+            margin-top: 40px;
+            color: #666;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>مرحباً بك في موقعي</h1>
+        <p>هذه أول صفحة ويب أرفعها على GitHub</p>
+    </header>
+
+    <main>
+        <h2>نبذة عن المشروع</h2>
+        <p>أهلاً بك! هنا سأضع أعمالي وصفحاتي القادمة خطوة بخطوة.</p>
+        <button onclick="showMessage()">اضغط هنا</button>
+        <p id="msg" style="margin-top: 15px; font-weight: bold;"></p>
+    </main>
+
+    <footer>
+        <p>جميع الحقوق محفوظة &copy; 2026</p>
+    </footer>
+
+    <script>
+        function showMessage() {
+            document.getElementById("msg").textContent = "تم تشغيل الصفحة بنجاح!";
+        }
+    </script>
+
+</body>
+</html>
